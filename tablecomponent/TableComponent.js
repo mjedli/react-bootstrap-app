@@ -11,17 +11,17 @@ class TableComponent extends Component {
     };
   }
 
-  title = "Copyright";
+  title = "Component";
 
   render() {
     return (
       
     <div align="center" class ="tab-app col col-sm col-md col-lg col-xl tab-app">
-        <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a>test<i class="material-icons">autorenew</i></a>
-        </li>
-      </ul>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a  class="nav-link active" href="#">{this.title}<i class="material-icons">autorenew</i></a>
+    </li>
+  </ul>
       <div align="right">
         <div class="btn-group" role="group" aria-label="Basic example">
           <button  type="button" class="btn btn-secondary">Add<i class="material-icons">add</i></button>
