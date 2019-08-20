@@ -16,12 +16,14 @@ class TableComponent extends Component {
   render() {
     return (
       
-    <div align="center" class ="tab-app col col-sm col-md col-lg col-xl tab-app">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a  class="nav-link active" href="#">{this.title}<i class="material-icons">autorenew</i></a>
-    </li>
-  </ul>
+    <div className="TableComponent" class ="tab-app">
+    <div align="center" class ="col col-sm col-md col-lg col-xl">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a  class="nav-link active" href="#">{this.title}
+          <i class="material-icons">autorenew</i></a>
+        </li>
+      </ul>
       <div align="right">
         <div class="btn-group" role="group" aria-label="Basic example">
           <button  type="button" class="btn btn-secondary">Add<i class="material-icons">add</i></button>
@@ -29,6 +31,7 @@ class TableComponent extends Component {
           <button  type="button" class="btn btn-secondary">Remove<i class="material-icons"><i class="material-icons">remove_circle_outline</i></i></button>
         </div>
       </div>
+    </div>
     </div>
 
     );
