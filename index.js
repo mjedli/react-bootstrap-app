@@ -4,6 +4,7 @@ import Hello from './Hello';
 import Test from './test';
 import Toolbar from './toolbar/Toolbar';
 import Footer from './footer/Footer';
+import TableComponent from './tablecomponent/TableComponent';
 import './style.css';
 
 
@@ -28,6 +29,7 @@ class App extends Component {
           Start editing to see some magic happen :
         </p>
         </div>
+        <TableComponent />
         <Footer/>
       </div>
     );
