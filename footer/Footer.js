@@ -7,7 +7,7 @@ class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear,
+      dateCopyright: new Date().getFullYear(),
     };
   }
 
@@ -17,7 +17,7 @@ class Footer extends Component {
     return (
       
       <footer class="footer-app">
-        <div align="center">{this.copyright}&nbsp;&copy;{this.state.dateCopyright}</div>
+        <div align="center">{this.copyright}&nbsp;{this.state.dateCopyright}&nbsp;&copy;</div>
       </footer>
 
     );
