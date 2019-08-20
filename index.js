@@ -24,12 +24,15 @@ class App extends Component {
       <div>
         <Toolbar title={this.state.name}/>
         <div align="center">
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :
-        </p>
+          <Hello name={this.state.name} />
+          <p>
+            Start editing to see some magic happen :
+          </p>
+          <br/><br/>
         </div>
-        <TableComponent />
+        <div align="center">
+          <TableComponent />
+        </div>
         <Footer/>
       </div>
     );
