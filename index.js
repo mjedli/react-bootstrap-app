@@ -10,8 +10,6 @@ import './style.css';
 
 class App extends Component {
 
-  message="test";
-
   constructor() {
     super();
     this.state = {
