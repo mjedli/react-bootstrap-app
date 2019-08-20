@@ -4,7 +4,7 @@ import Hello from './Hello';
 import Test from './test';
 import Toolbar from './toolbar/Toolbar';
 import Footer from './footer/Footer';
-import TableComponent from './tablecomponent/TableComponent';
+import TableComponent from './table-component/TableComponent';
 import './style.css';
 
 

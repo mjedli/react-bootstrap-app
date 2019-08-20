@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import './tablecomponent.css';
+import './table-component.css';
 
 class TableComponent extends Component {
 
