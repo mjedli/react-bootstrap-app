@@ -6,8 +6,7 @@ import Toolbar from './toolbar/Toolbar';
 import Footer from './footer/Footer';
 import Table from './table/Table';
 import TableComponent from './table-component/TableComponent';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import AppRouter from './AppRouter';
+import AppRoute from './AppRoute';
 import './style.css';
 
 
@@ -35,7 +34,7 @@ class App extends Component {
           <TableComponent />
         </div>
         <div align="center">
-          <AppRouter />
+
         </div>
         <div align="center">
           <Table />
@@ -46,4 +45,4 @@ class App extends Component {
   }
 }
 
-render(<AppRouter />, document.getElementById('root'));
+render(<AppRoute />, document.getElementById('root'));
