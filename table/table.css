@@ -1,0 +1,10 @@
+.tab-app{
+  width: 95%;
+  margin-top: 10px;
+}
+.page-item.active .page-link {
+  z-index: 1;
+  color: #000;
+  background-color: #dee2e6;
+  border-color: #dee2e6;
+}

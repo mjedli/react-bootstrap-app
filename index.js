@@ -4,6 +4,7 @@ import Hello from './Hello';
 import Test from './test';
 import Toolbar from './toolbar/Toolbar';
 import Footer from './footer/Footer';
+import Table from './table/Table';
 import TableComponent from './table-component/TableComponent';
 import './style.css';
 
@@ -30,6 +31,7 @@ class App extends Component {
         </div>
         <div align="center">
           <TableComponent />
+          <Table />
         </div>
         <Footer/>
       </div>
