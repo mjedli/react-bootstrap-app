@@ -44,4 +44,4 @@ class App extends Component {
   }
 }
 
-render(<AppRoute />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
