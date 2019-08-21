@@ -7,6 +7,7 @@ import Footer from './footer/Footer';
 import Table from './table/Table';
 import TableComponent from './table-component/TableComponent';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AppRouter from './AppRouter';
 import './style.css';
 
 
@@ -32,6 +33,9 @@ class App extends Component {
         </div>
         <div align="center">
           <TableComponent />
+        </div>
+        <div align="center">
+          <AppRouter />
         </div>
         <div align="center">
           <Table />

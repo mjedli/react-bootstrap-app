@@ -1,40 +1,32 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Table from './table/Table';
-import Add from './add/Add';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Table from './table/Table'
+import Add from './add/Add'
 
-function Table() {
-  return <Table />;
-}
+class AppRouter extends Component {
 
-function Add() {
-  return <Add />;
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      dateCopyright: new Date().getFullYear(),
+    };
+  }
 
-function AppRouter() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
-              <Link to="/users/">Users</Link>
-            </li>
-          </ul>
-        </nav>
+  copyright = "Copyright";
 
-        <Route path="/" exact component={Table} />
-        <Route path="/table/" component={Table} />
-        <Route path="/add/" component={Add} />
-      </div>
-    </Router>
-  );
+  render() {
+    return (
+      
+        <Router>
+            <div>
+                <Route exact path="/" component={Home}/>
+                <Route path="/about" component={About}/>
+            </div>
+        </Router>
+
+    );
+  }
 }
 
 export default AppRouter;
