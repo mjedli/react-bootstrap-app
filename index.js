@@ -33,10 +33,7 @@ class App extends Component {
           <TableComponent />
         </div>
         <div align="center">
-
-        </div>
-        <div align="center">
-          <Table />
+          <AppRoute />
         </div>
         <Footer/>
       </div>
