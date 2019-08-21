@@ -20,30 +20,30 @@ class Table extends Component {
   render() {
     return (
   
-<div className="Table" class="tab-app">
-<table class="table table-striped tab-app col col-sm col-md col-lg col-xl">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col"><a >Title<i class="material-icons">swap_vert</i></a></th>
-      <th scope="col"><a >Address<i class="material-icons">swap_vert</i></a></th>
-      <th scope="col" colspan="2">Type</th>
-    </tr>
-  </thead>
-  <tbody>
+      <div className="Table" class="tab-app">
+      <table class="table table-striped tab-app col col-sm col-md col-lg col-xl">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"><a >Title<i class="material-icons">swap_vert</i></a></th>
+            <th scope="col"><a >Address<i class="material-icons">swap_vert</i></a></th>
+            <th scope="col" colspan="2">Type</th>
+          </tr>
+        </thead>
+        <tbody>
 
-     {this.state.list.map((comp) =>
-        <tr>
-        <th scope="row">{comp.id}</th>
-        <td>{comp.title}</td>
-        <td>{comp.adresse}</td>
-        <td>{comp.type}</td>
-        </tr>
-      )}
+          {this.state.list.map((comp) =>
+              <tr>
+              <th scope="row">{comp.id}</th>
+              <td>{comp.title}</td>
+              <td>{comp.adresse}</td>
+              <td>{comp.type}</td>
+              </tr>
+            )}
 
-  </tbody>
-</table>
-</div>
+        </tbody>
+      </table>
+      </div>
 
     );
   }
