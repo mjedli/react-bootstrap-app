@@ -9,11 +9,9 @@ class AppRoute extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear(),
+
     };
   }
-
-  copyright = "Copyright";
 
   render() {
     return (
