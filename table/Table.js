@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './table.css';
+import AppService from '../AppService';
 
 class Table extends Component {
 
@@ -8,17 +9,13 @@ class Table extends Component {
     super(props);
     this.state = {
       dateCopyright: new Date().getFullYear(),
+      appService : AppService,
+      list : [],
     };
+
+    this.state.list = this.state.appService.getAll();
+
   }
-
-  copyright = "Copyright";
-
-  list = [
-    {id : 1, title : "title 3", adresse : "address 1", type : "true"},
-    {id : 2, title : "title 2", adresse : "address 4", type : "false"},
-    {id : 3, title : "title 1", adresse : "address 3", type : "false"},
-    {id : 4, title : "title 4", adresse : "address 2", type : "false"}
-  ];
 
   render() {
     return (
@@ -35,7 +32,7 @@ class Table extends Component {
   </thead>
   <tbody>
 
-     {this.list.map((comp) =>
+     {this.state.list.map((comp) =>
         <tr>
         <th scope="row">{comp.id}</th>
         <td>{comp.title}</td>
