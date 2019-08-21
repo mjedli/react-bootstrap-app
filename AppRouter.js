@@ -20,8 +20,8 @@ class AppRouter extends Component {
       
         <Router>
             <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/about" component={About}/>
+                <Route exact path="/" component={Table}/>
+                <Route path="/add" component={Add}/>
             </div>
         </Router>
 
