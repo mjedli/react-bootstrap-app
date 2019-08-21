@@ -5,7 +5,7 @@ import Toolbar from './toolbar/Toolbar';
 import Footer from './footer/Footer';
 import Table from './table/Table';
 import TableComponent from './table-component/TableComponent';
-import AppRoute from './AppRoute';
+import AppRouter from './AppRouter';
 import './style.css';
 
 
@@ -33,7 +33,7 @@ class App extends Component {
           <TableComponent />
         </div>
         <div align="center">
-          <AppRoute />
+          <AppRouter />
         </div>
         <Footer/>
       </div>
