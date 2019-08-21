@@ -31,6 +31,8 @@ class App extends Component {
         </div>
         <div align="center">
           <TableComponent />
+        </div>
+        <div align="center">
           <Table />
         </div>
         <Footer/>
