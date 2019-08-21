@@ -6,6 +6,7 @@ import Toolbar from './toolbar/Toolbar';
 import Footer from './footer/Footer';
 import Table from './table/Table';
 import TableComponent from './table-component/TableComponent';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './style.css';
 
 
