@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Table from '../table/Table'
-import Add from '../add/Add'
+import Add from '../add/AddComponent'
 import './table-component.css';
 
 class TableComponent extends Component {
@@ -39,7 +39,7 @@ class TableComponent extends Component {
     </div>
 
                 <Route exact path="/" component={Table}/>
-                <Route path="/add" component={Add}/>
+                <Route path="/add" component={AddComponent}/>
 
     </Router>
     </div>

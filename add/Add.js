@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './add.css';
 
-class Add extends Component {
+class AddComponent extends Component {
 
   constructor(props) {
     super(props);
