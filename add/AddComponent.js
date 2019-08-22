@@ -18,12 +18,12 @@ class AddComponent extends Component {
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Title</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" value="{{currentComponent.title}}" name="currentComponent.title" />
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" value="" name="currentComponent.title" />
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Address</label>
           <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter address"
-        value="{{currentComponent.adresse}}"
+        value=""
           name="currentComponent.adresse"/>
         </div>
         <div class="form-group form-check">
