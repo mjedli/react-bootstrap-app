@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import './addComponent.css';
+import './add-component.css';
 
 class AddComponent extends Component {
 
