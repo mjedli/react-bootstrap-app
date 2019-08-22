@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import './add.css';
+import './addComponent.css';
 
 class AddComponent extends Component {
 
@@ -22,4 +22,4 @@ class AddComponent extends Component {
   }
 }
 
-export default Add;
+export default AddComponent;
