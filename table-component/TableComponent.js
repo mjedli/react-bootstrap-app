@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Table from '../table/Table'
-import Add from '../add/AddComponent'
+import AddComponent from '../add/AddComponent'
 import './table-component.css';
 
 class TableComponent extends Component {
