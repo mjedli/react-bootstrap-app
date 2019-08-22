@@ -22,24 +22,24 @@ class TableComponent extends Component {
     
     <div className="TableComponent" class ="tab-app">
     <Router>
-    <div align="center" class ="col col-sm col-md col-lg col-xl">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a  class="nav-link active" href="#"><Link to="/">{this.title}
-          <i class="material-icons">autorenew</i></Link></a>
-        </li>
-      </ul>
-      <div align="right">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <Link to="/add"><button  type="button" class="btn btn-secondary">Add<i class="material-icons">add</i></button></Link>
-          <button  type="button" class="btn btn-secondary">Modify<i class="material-icons">autorenew</i></button>
-          <button  type="button" class="btn btn-secondary">Remove<i class="material-icons"><i class="material-icons">remove_circle_outline</i></i></button>
+      <div align="center" class ="col col-sm col-md col-lg col-xl">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <Link class="nav-link active" to="/">{this.title}
+            <i class="material-icons">autorenew</i></Link>
+          </li>
+        </ul>
+        <div align="right">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <Link to="/add"><button  type="button" class="btn btn-secondary">Add<i class="material-icons">add</i></button></Link>
+            <button  type="button" class="btn btn-secondary">Modify<i class="material-icons">autorenew</i></button>
+            <button  type="button" class="btn btn-secondary">Remove<i class="material-icons"><i class="material-icons">remove_circle_outline</i></i></button>
+          </div>
         </div>
       </div>
-    </div>
 
-                <Route exact path="/" component={Table}/>
-                <Route path="/add" component={AddComponent}/>
+        <Route exact path="/" component={Table}/>
+        <Route path="/add" component={AddComponent}/>
 
     </Router>
     </div>
