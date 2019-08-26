@@ -14,26 +14,15 @@ class RemoveComponent extends Component {
   render() {
     return (
       
-      <div class="col col-sm col-md col-lg col-xl tab-app-add" align="left">
+      <div class="col col-sm col-md col-lg col-xl tab-app" align="left">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Title</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" value="" name="currentComponent.title" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Address</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter address"
-        value=""
-          name="currentComponent.adresse"/>
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" value="{{currentComponent.type}}" name="currentComponent.type"/>
-          <label class="form-check-label" for="exampleCheck1">Type</label>
+          Do you want to remove this component!
         </div>
         <div align="right">
           <button type="button" routerLink="/" class="btn btn-info">Cancel</button>
           &nbsp;
-          <button type="submit" class="btn btn-primary" >Add</button>
+          <button type="submit" class="btn btn-primary" >Remove</button>
         </div>
       </form>
       </div>
