@@ -50,7 +50,7 @@ class ModifyComponent extends Component {
           name="currentComponent.adresse"/>
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" defaultValue ={this.state.currentComponent.type} name="currentComponent.type"
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" defaultChecked ={this.state.currentComponent.type} name="currentComponent.type"
           onChange={(e)=>{this.typeChangeEvent(e)}}/>
           <label class="form-check-label" for="exampleCheck1">Type</label>
         </div>
