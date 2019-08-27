@@ -11,10 +11,24 @@ class Table extends Component {
       dateCopyright: new Date().getFullYear(),
       appService : AppService,
       list : [],
+      currentId : 0
     };
 
     this.state.list = this.state.appService.getAll();
 
+    this.state.currentId = this.state.appService.getCurrentId();
+
+  }
+
+
+  onSelectRow(id, ischeked) {
+    console.log("test");
+    if(ischeked == true) {
+      console.log("test2");
+     // this.state.appService.setCurrentId(id);
+    } else {
+      //this.state.appService.setCurrentId(0);
+    }
   }
 
   render() {
@@ -27,7 +41,7 @@ class Table extends Component {
             <th scope="col">#</th>
             <th scope="col"><a >Title<i class="material-icons">swap_vert</i></a></th>
             <th scope="col"><a >Address<i class="material-icons">swap_vert</i></a></th>
-            <th scope="col" colspan="2">Type</th>
+            <th scope="col" colSpan="2">Type</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +52,11 @@ class Table extends Component {
               <td>{comp.title}</td>
               <td>{comp.adresse}</td>
               <td>{comp.type}</td>
+              {(comp.id === this.state.currentId) ? (
+                  <td><input type="checkbox"  checked onClick={this.onSelectRow(comp.id, this.checkboxHandler)} /></td>
+               ) :(
+                <td><input type="checkbox"  onClick={this.onSelectRow(comp.id, this.checkboxHandler)} /></td>
+               )}
               </tr>
             )}
 

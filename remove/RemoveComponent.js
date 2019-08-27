@@ -14,7 +14,7 @@ class RemoveComponent extends Component {
   render() {
     return (
       
-      <div class="col col-sm col-md col-lg col-xl tab-app" align="left">
+      <div class="col col-sm col-md col-lg col-xl tab-app-remove" align="left">
       <form>
         <div class="form-group">
           Do you want to remove this component!

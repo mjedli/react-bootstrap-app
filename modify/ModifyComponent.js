@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import AppService from '../AppService';
 import './modify-component.css';
 
 class ModifyComponent extends Component {
@@ -8,6 +9,8 @@ class ModifyComponent extends Component {
     super(props);
     this.state = {
       dateCopyright: new Date().getFullYear(),
+      appService : AppService,
+
     };
   }
 
