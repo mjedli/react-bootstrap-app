@@ -13,6 +13,7 @@ class ModifyComponent extends Component {
       currentComponent : {id : 0, title : "", adresse : "", type : "false"},
     };
 
+    if(this.state.appService.getCurrentId() !== 0)
     this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
   }
 

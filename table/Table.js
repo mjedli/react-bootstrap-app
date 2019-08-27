@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './table.css';
 import AppService from '../AppService';
+import { Redirect } from 'react-router-dom'
 
 class Table extends Component {
 
