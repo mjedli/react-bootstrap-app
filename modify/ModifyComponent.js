@@ -22,17 +22,14 @@ class ModifyComponent extends Component {
   }
 
   titleChangeEvent(event) {
-    console.log(event.target.value);
     this.state.currentComponent.title = event.target.value;
   }
 
   addressChangeEvent(event) {
-    console.log(event.target.value);
     this.state.currentComponent.adresse = event.target.value;
   }
 
   typeChangeEvent(event) {
-    console.log(event.target.checked);
     this.state.currentComponent.type = event.target.checked.toString();
   }
 
