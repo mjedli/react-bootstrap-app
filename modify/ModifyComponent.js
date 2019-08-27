@@ -33,7 +33,7 @@ class ModifyComponent extends Component {
 
   typeChangeEvent(event) {
     console.log(event.target.checked);
-    this.state.currentComponent.type = event.target.checked.value;
+    this.state.currentComponent.type = event.target.checked.toString();
   }
 
   render() {
