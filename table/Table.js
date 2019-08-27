@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './table.css';
 import AppService from '../AppService';
-import { Redirect } from 'react-router-dom'
 
 class Table extends Component {
 
@@ -23,9 +22,7 @@ class Table extends Component {
 
 
   onSelectRow(id, event) {
-    console.log("test " + event.target.checked );
     if(event.target.checked === true) {
-      console.log("test2");
       this.state.appService.setCurrentId(id);
     } else {
       this.state.appService.setCurrentId(0);
