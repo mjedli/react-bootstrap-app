@@ -29,6 +29,17 @@ class AppService {
   getAll() {
     return this.data;
   }
+
+  modifiyComponent(myComponent) {
+    const index = this.data.findIndex((e) => e.id === myComponent.id);
+
+    if (index === -1) {
+        this.data.push(myComponent);
+    } else {
+        this.data[index] = myComponent;
+    }
+  }
+
 }
 
 const instance = new AppService();
