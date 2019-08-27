@@ -21,13 +21,13 @@ class Table extends Component {
   }
 
 
-  onSelectRow(id, ischeked) {
-    console.log("test");
-    if(ischeked == true) {
+  onSelectRow(id, event) {
+    console.log("test " + event.target.checked );
+    if(event.target.checked === true) {
       console.log("test2");
-     // this.state.appService.setCurrentId(id);
+      this.state.appService.setCurrentId(id);
     } else {
-      //this.state.appService.setCurrentId(0);
+      this.state.appService.setCurrentId(0);
     }
   }
 
@@ -53,9 +53,9 @@ class Table extends Component {
               <td>{comp.adresse}</td>
               <td>{comp.type}</td>
               {(comp.id === this.state.currentId) ? (
-                  <td><input type="checkbox"  checked onClick={this.onSelectRow(comp.id, this.checkboxHandler)} /></td>
+                  <td><input type="checkbox"  checked onChange={(e) => {this.onSelectRow(comp.id, e)}} /></td>
                ) :(
-                <td><input type="checkbox"  onClick={this.onSelectRow(comp.id, this.checkboxHandler)} /></td>
+                <td><input type="checkbox"  onChange={(e) => {this.onSelectRow(comp.id, e)}}  /></td>
                )}
               </tr>
             )}
