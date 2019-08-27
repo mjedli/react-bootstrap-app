@@ -32,6 +32,5 @@ class AppService {
 }
 
 const instance = new AppService();
-Object.freeze(instance);
 
 export default instance;
