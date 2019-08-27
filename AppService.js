@@ -7,9 +7,8 @@ class AppService {
       {id : 3, title : "title 1", adresse : "address 3", type : "false"},
       {id : 4, title : "title 4", adresse : "address 2", type : "false"}
     ];
+    this.currentId = 0;
   }
-
-  currentId = 0 ;
 
   getCurrentId() {
     return this.currentId;

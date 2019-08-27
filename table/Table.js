@@ -25,9 +25,9 @@ class Table extends Component {
     console.log("test " + event.target.checked );
     if(event.target.checked === true) {
       console.log("test2");
-      this.state.appService.setCurrentId(id);
+      this.state.appService.currentId = id;
     } else {
-      this.state.appService.setCurrentId(0);
+      this.state.appService.currentId = 0;
     }
   }
 
