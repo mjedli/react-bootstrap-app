@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Redirect } from 'react-router-dom'
 import AppService from '../AppService';
 import './modify-component.css';
 
