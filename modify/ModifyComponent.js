@@ -57,12 +57,10 @@ class ModifyComponent extends Component {
         </div>
         <div class="form-group form-check">
 
-        {("true" === this.state.currentComponent.type) ? (
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked name="currentComponent.type"
-                    onChange={(e)=>{this.typeChangeEvent(e)}}/>
+          {("true" === this.state.currentComponent.type) ? (
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" checked name="currentComponent.type" onChange={(e)=>{this.typeChangeEvent(e)}}/>
           ) :(
-          <input type="checkbox" class="form-check-input" id="exampleCheck1"  name="currentComponent.type"
-                    onChange={(e)=>{this.typeChangeEvent(e)}}/>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1"  name="currentComponent.type" onChange={(e)=>{this.typeChangeEvent(e)}}/>
           )}
 
           <label class="form-check-label" for="exampleCheck1">Type</label>
