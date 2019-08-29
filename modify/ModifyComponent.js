@@ -11,8 +11,7 @@ class ModifyComponent extends Component {
     this.state = {
       dateCopyright: new Date().getFullYear(),
       appService : AppService,
-      currentComponent : {id : 0, title : "", adresse : "", type : "false"},
-      redirect: false
+      currentComponent : {id : 0, title : "", adresse : "", type : "false"}
     };
 
     if(this.state.appService.getCurrentId() !== 0)
@@ -21,7 +20,7 @@ class ModifyComponent extends Component {
 
   modify = () => {
     this.state.appService.modifiyComponent(this.state.currentComponent);
-   this.props.history.push('/')
+    this.props.history.push('/')
   }
 
   titleChangeEvent(event) {
