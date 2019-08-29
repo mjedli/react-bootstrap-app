@@ -24,7 +24,7 @@ class App extends Component {
         <div align="center">
           <Hello name={this.state.name} />
           <p>
-            Start editing to see some magic happen :
+            Start editing to see some magic happen :)
           </p>
           <br/><br/>
         </div>
