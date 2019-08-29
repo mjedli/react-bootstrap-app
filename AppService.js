@@ -27,7 +27,16 @@ class AppService {
     this.currentId = id; 
   }
 
-  add(item){
+  addComponent(item){
+    let currentId = 1;
+
+    let index = this.data.findIndex((e) => e.id === currentId);
+
+    while(index !== -1) {
+      currentId = currentId +1;
+      index = this.data.findIndex((e) => e.id === currentId);
+    }
+    item.id=currentId;
     this.data.push(item);
   }
 

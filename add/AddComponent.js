@@ -10,15 +10,12 @@ class AddComponent extends Component {
     this.state = {
       appService : AppService,
       currentComponent : {id : 0, title : "", adresse : "", type : "false"},
-      messageAlert : "You should select a component !"
     };
+  }
 
-    if(this.state.appService.getCurrentId() !== 0) {
-      this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
-    } else {
-      this.state.appService.setAlertMessage(this.state.messageAlert);
-      this.props.history.push('/alert');
-    }
+  add = () => {
+    this.state.appService.addComponent(this.state.currentComponent);
+    this.props.history.push('/');
   }
 
   cancel = () => {
@@ -36,7 +33,7 @@ class AddComponent extends Component {
   typeChangeEvent(event) {
     this.state.currentComponent.type = event.target.checked.toString();
   }
-  
+
   render() {
     return (
       
@@ -56,13 +53,13 @@ class AddComponent extends Component {
         </div>
 
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" value="{{currentComponent.type}}" name="currentComponent.type"/>
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" onChange={(e)=>{this.typeChangeEvent(e)}} name="currentComponent.type"/>
           <label class="form-check-label" for="exampleCheck1">Type</label>
         </div>
         <div align="right">
           <button type="button" onClick={this.cancel } class="btn btn-info">Cancel</button>
           &nbsp;
-          <button type="submit" class="btn btn-primary" >Add</button>
+          <button type="submit" class="btn btn-primary" onClick={this.add } >Add</button>
         </div>
       </form>
       </div>
