@@ -16,6 +16,8 @@ class ModifyComponent extends Component {
 
     if(this.state.appService.getCurrentId() !== 0)
     this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
+
+    console.log(this.state.currentComponent);
   }
 
   modify = () => {
@@ -54,8 +56,15 @@ class ModifyComponent extends Component {
           name="currentComponent.adresse"/>
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" defaultChecked ={this.state.currentComponent.type} name="currentComponent.type"
-          onChange={(e)=>{this.typeChangeEvent(e)}}/>
+
+        {("true" === this.state.currentComponent.type) ? (
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked name="currentComponent.type"
+                    onChange={(e)=>{this.typeChangeEvent(e)}}/>
+          ) :(
+          <input type="checkbox" class="form-check-input" id="exampleCheck1"  name="currentComponent.type"
+                    onChange={(e)=>{this.typeChangeEvent(e)}}/>
+          )}
+
           <label class="form-check-label" for="exampleCheck1">Type</label>
         </div>
         <div align="right">
