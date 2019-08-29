@@ -9,7 +9,6 @@ class ModifyComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear(),
       appService : AppService,
       currentComponent : {id : 0, title : "", adresse : "", type : "false"}
     };
