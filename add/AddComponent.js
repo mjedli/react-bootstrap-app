@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import AppService from '../AppService';
 import './add-component.css';
 
 class AddComponent extends Component {
@@ -7,28 +8,49 @@ class AddComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear(),
+      appService : AppService,
+      currentComponent : {id : 0, title : "", adresse : "", type : "false"},
+      messageAlert : "You should select a component !"
     };
+
+    if(this.state.appService.getCurrentId() !== 0) {
+      this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
+    } else {
+      this.state.appService.setAlertMessage(this.state.messageAlert);
+      this.props.history.push('/alert');
+    }
   }
 
   cancel = () => {
     this.props.history.push('/');
   }
+  
+  titleChangeEvent(event) {
+    this.state.currentComponent.title = event.target.value;
+  }
 
+  addressChangeEvent(event) {
+    this.state.currentComponent.adresse = event.target.value;
+  }
+
+  typeChangeEvent(event) {
+    this.state.currentComponent.type = event.target.checked.toString();
+  }
+  
   render() {
     return (
       
       <div class="col col-sm col-md col-lg col-xl tab-app-add" align="left">
       <form>
-      
+
         <div class="form-group">
           <label for="exampleInputEmail1">Title</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" defaultValue ={this.state.currentComponent.title} name="currentComponent.title"
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" name="currentComponent.title"
           onChange={(e)=>{this.titleChangeEvent(e)}} />
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Address</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter address" defaultValue ={this.state.currentComponent.adresse} 
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter address"
           onChange={(e)=>{this.addressChangeEvent(e)}}
           name="currentComponent.adresse"/>
         </div>
