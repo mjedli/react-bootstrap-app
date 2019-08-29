@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import AppService from '../AppService';
 import './remove-component.css';
 
 class RemoveComponent extends Component {
@@ -7,8 +8,22 @@ class RemoveComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear(),
+      appService : AppService,
+      currentComponent : {id : 0, title : "", adresse : "", type : "false"}
     };
+
+    if(this.state.appService.getCurrentId() !== 0)
+    this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
+    
+  }
+
+  cancel = () => {
+    this.props.history.push('/')
+  }
+
+  remove = () => {
+    this.state.appService.removeComponent(this.state.currentComponent);
+    this.props.history.push('/')
   }
 
   render() {
@@ -20,9 +35,9 @@ class RemoveComponent extends Component {
           Do you want to remove this component!
         </div>
         <div align="right">
-          <button type="button" routerLink="/" class="btn btn-info">Cancel</button>
+          <button type="button" onClick={this.cancel } class="btn btn-info">Cancel</button>
           &nbsp;
-          <button type="submit" class="btn btn-primary" >Remove</button>
+          <button type="submit" onClick={this.remove } class="btn btn-primary" >Remove</button>
         </div>
       </form>
       </div>

@@ -29,7 +29,10 @@ class AppService {
   getAll() {
     return this.data;
   }
-
+  
+  /*
+  * modifiyComponent
+  */
   modifiyComponent(myComponent) {
     const index = this.data.findIndex((e) => e.id === myComponent.id);
 
@@ -38,6 +41,18 @@ class AppService {
     } else {
         this.data[index] = myComponent;
     }
+  }
+
+  /*
+  * removeComponent
+  */
+  removeComponent() {
+    const index = this.data.findIndex((e) => e.id === this.currentId);
+
+    if (index !== -1) {
+        this.data.splice(index, 1);
+    }
+    this.currentId = 0; 
   }
 
 }
