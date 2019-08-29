@@ -9,21 +9,25 @@ class AlertComponent extends Component {
     super(props);
     this.state = {
       appService : AppService,
-      alertMessage : "";
+      alertMessage : ""
     };
-    alertMessage = this.state.appService.getAlertMessage();
+    this.state.alertMessage = this.state.appService.getAlertMessage();
+  }
+
+  cancel = () => {
+    this.props.history.push('/');
   }
 
   render() {
     return (
       
-      <div class="col col-sm col-md col-lg col-xl tab-app" align="left">
+      <div class="col col-sm col-md col-lg col-xl tab-app-alert" align="left">
       <form>
         <div class="form-group">
           {this.state.alertMessage}
         </div>
         <div align="right">
-          <button type="button" routerLink="/" class="btn btn-info">Cancel</button>
+          <button type="button" onClick={this.cancel } class="btn btn-info">Cancel</button>
         </div>
       </form>
       </div>

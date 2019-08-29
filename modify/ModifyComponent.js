@@ -10,21 +10,25 @@ class ModifyComponent extends Component {
     super(props);
     this.state = {
       appService : AppService,
-      currentComponent : {id : 0, title : "", adresse : "", type : "false"}
+      currentComponent : {id : 0, title : "", adresse : "", type : "false"},
+      messageAlert : "You should select a component !"
     };
 
-    if(this.state.appService.getCurrentId() !== 0)
-    this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
-    
+    if(this.state.appService.getCurrentId() !== 0) {
+      this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
+    } else {
+      this.state.appService.setAlertMessage(this.state.messageAlert);
+      this.props.history.push('/alert');
+    }
   }
 
   modify = () => {
     this.state.appService.modifiyComponent(this.state.currentComponent);
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   cancel = () => {
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   titleChangeEvent(event) {

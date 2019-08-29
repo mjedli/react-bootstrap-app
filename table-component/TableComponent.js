@@ -5,6 +5,7 @@ import Table from '../table/Table'
 import AddComponent from '../add/AddComponent'
 import ModifyComponent from '../modify/ModifyComponent'
 import RemoveComponent from '../remove/RemoveComponent'
+import AlertComponent from '../alert/AlertComponent'
 import './table-component.css';
 
 class TableComponent extends Component {
@@ -44,6 +45,7 @@ class TableComponent extends Component {
         <Route path="/add" component={AddComponent}/>
         <Route path="/modify" component={ModifyComponent}/>
         <Route path="/remove" component={RemoveComponent}/>
+        <Route path="/alert" component={AlertComponent}/>
 
     </Router>
     </div>
