@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import { Redirect } from 'react-router-dom'
 import AppService from '../AppService';
 import './modify-component.css';
 
@@ -11,14 +12,16 @@ class ModifyComponent extends Component {
       dateCopyright: new Date().getFullYear(),
       appService : AppService,
       currentComponent : {id : 0, title : "", adresse : "", type : "false"},
+      redirect: false
     };
 
     if(this.state.appService.getCurrentId() !== 0)
     this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
   }
 
-  modifyComponent() {
+  modify = () => {
     this.state.appService.modifiyComponent(this.state.currentComponent);
+   this.props.history.push('/')
   }
 
   titleChangeEvent(event) {
@@ -34,6 +37,7 @@ class ModifyComponent extends Component {
   }
 
   render() {
+
     return (
       
       <div class="col col-sm col-md col-lg col-xl tab-app-add" align="left">
@@ -57,12 +61,13 @@ class ModifyComponent extends Component {
         <div align="right">
           <button type="button" routerLink="/" class="btn btn-info">Cancel</button>
           &nbsp;
-          <button type="button" class="btn btn-primary" onClick={this.modifyComponent()}>Add</button>
+          <button type="button" class="btn btn-primary" onClick={this.modify }>Add</button>
         </div>
       </form>
       </div>
 
     );
+
   }
 }
 
