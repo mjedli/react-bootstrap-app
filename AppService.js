@@ -11,6 +11,10 @@ class AppService {
     this.alertMessage = "";
   }
 
+  setAlertMessage(msg) {
+    this.alertMessage = msg;
+  }
+
   getAlertMessage() {
     return this.alertMessage;
   }

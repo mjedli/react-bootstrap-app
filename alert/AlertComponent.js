@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import AppService from '../AppService';
 import './alert-component.css';
 
 class AlertComponent extends Component {
@@ -7,11 +8,11 @@ class AlertComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear(),
+      appService : AppService,
+      alertMessage : "";
     };
+    alertMessage = this.state.appService.getAlertMessage();
   }
-
-  copyright = "Copyright";
 
   render() {
     return (
@@ -19,7 +20,7 @@ class AlertComponent extends Component {
       <div class="col col-sm col-md col-lg col-xl tab-app" align="left">
       <form>
         <div class="form-group">
-          {{alertMessage}}
+          {this.state.alertMessage}
         </div>
         <div align="right">
           <button type="button" routerLink="/" class="btn btn-info">Cancel</button>

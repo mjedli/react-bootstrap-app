@@ -8,7 +8,6 @@ class Table extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateCopyright: new Date().getFullYear(),
       appService : AppService,
       list : [],
       currentId : 0
