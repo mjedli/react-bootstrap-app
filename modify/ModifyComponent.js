@@ -16,12 +16,15 @@ class ModifyComponent extends Component {
 
     if(this.state.appService.getCurrentId() !== 0)
     this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
-
-    console.log(this.state.currentComponent);
+    
   }
 
   modify = () => {
     this.state.appService.modifiyComponent(this.state.currentComponent);
+    this.props.history.push('/')
+  }
+
+  cancel = () => {
     this.props.history.push('/')
   }
 
@@ -57,16 +60,16 @@ class ModifyComponent extends Component {
         </div>
         <div class="form-group form-check">
 
-          {("true" === this.state.currentComponent.type) ? (
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" checked name="currentComponent.type" onChange={(e)=>{this.typeChangeEvent(e)}}/>
+          {("true" === this.state.currentComponent.type ) ? (
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" defaultChecked={true} name="currentComponent.type" onChange={(e)=>{this.typeChangeEvent(e)}}/>
           ) :(
-            <input type="checkbox" class="form-check-input" id="exampleCheck1"  name="currentComponent.type" onChange={(e)=>{this.typeChangeEvent(e)}}/>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" defaultChecked={false} name="currentComponent.type" onChange={(e)=>{this.typeChangeEvent(e)}}/>
           )}
 
           <label class="form-check-label" for="exampleCheck1">Type</label>
         </div>
         <div align="right">
-          <button type="button" routerLink="/" class="btn btn-info">Cancel</button>
+          <button type="button" onClick={this.cancel } class="btn btn-info">Cancel</button>
           &nbsp;
           <button type="button" class="btn btn-primary" onClick={this.modify }>Add</button>
         </div>
