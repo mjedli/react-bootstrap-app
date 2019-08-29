@@ -16,9 +16,16 @@ class AlertComponent extends Component {
   render() {
     return (
       
-      <footer class="footer-app">
-        <div align="center">{this.copyright}&nbsp;{this.state.dateCopyright}&nbsp;&copy;</div>
-      </footer>
+      <div class="col col-sm col-md col-lg col-xl tab-app" align="left">
+      <form>
+        <div class="form-group">
+          {{alertMessage}}
+        </div>
+        <div align="right">
+          <button type="button" routerLink="/" class="btn btn-info">Cancel</button>
+        </div>
+      </form>
+      </div>
 
     );
   }

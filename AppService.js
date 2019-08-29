@@ -8,6 +8,11 @@ class AppService {
       {id : 4, title : "title 4", adresse : "address 2", type : "false"}
     ];
     this.currentId = 0;
+    this.alertMessage = "";
+  }
+
+  getAlertMessage() {
+    return this.alertMessage;
   }
 
   getCurrentId() {
@@ -29,7 +34,7 @@ class AppService {
   getAll() {
     return this.data;
   }
-  
+
   /*
   * modifiyComponent
   */
