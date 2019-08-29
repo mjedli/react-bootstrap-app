@@ -36,9 +36,9 @@ class TableComponent extends Component {
           </ul>
           <div align="right">
             <div class="btn-group" role="group" aria-label="Basic example">
-              <Link to="/add"><button  type="button" class="btn btn-secondary">Add<i class="material-icons">add</i></button></Link>
-              <Link to="/modify"><button  type="button" class="btn btn-secondary">Modify<i class="material-icons">autorenew</i></button></Link>
-              <Link to="/remove"><button  type="button" class="btn btn-secondary">Remove<i class="material-icons"><i class="material-icons">remove_circle_outline</i></i></button></Link>
+              <button  type="button" class="btn btn-secondary"><Link class="link-modify" to="/add">Add<i class="material-icons">add</i></Link></button>
+              <button  type="button" class="btn btn-secondary"><Link  class="link-modify" to="/modify">Modify<i class="material-icons">autorenew</i></Link></button>
+              <button  type="button" class="btn btn-secondary"><Link class="link-modify" to="/remove">Remove<i class="material-icons"><i class="material-icons">remove_circle_outline</i></i></Link></button>
             </div>
           </div>
         </div>

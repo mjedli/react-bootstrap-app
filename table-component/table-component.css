@@ -2,3 +2,12 @@
   //width: 920px;
   width: 98%;
 }
+
+.link-modify {
+  color: white;
+}
+
+.link-modify:hover {
+  color: white;
+  text-decoration: none;
+}
