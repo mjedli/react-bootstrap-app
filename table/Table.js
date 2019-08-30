@@ -121,7 +121,7 @@ class Table extends Component {
         </tbody>
       </table>
 
-      <div align="center" class="tab-app">
+      <div align="center" class="tab-app-table">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-right">
             <li class="page-item">
