@@ -61,8 +61,9 @@ class Table extends Component {
     }
   }
 
-  getAllComponentPerPage(start) {
+  getAllComponentPerPage = (start) => {
     
+    console.log(" uuuu " + this.start + " uu " + start);
     let allComponent = [];
     allComponent = this.state.appService.getAll();
 
@@ -72,16 +73,17 @@ class Table extends Component {
       if(allComponent[t] != null)
       this.myComponent.push(allComponent[t]);
     }
+    
     this.currentPage = start;
   }
 
-  getAllComponentPrevPage() {
+  getAllComponentPrevPage = () => {
     if(this.currentPage > 1) {
       this.getAllComponentPerPage(this.currentPage-1);
     } 
   }
 
-  getAllComponentNextPage() {
+  getAllComponentNextPage = () => {
     if(this.currentPage < this.maxPage) {
       this.getAllComponentPerPage(this.currentPage+1);
     } 
