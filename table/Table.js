@@ -137,7 +137,7 @@ class Table extends Component {
                   </li>
                 ) :(
                   <li class="page-item">
-                    <a onClick={getAllComponentPerPage(number)} class="page-link" href="#">{{number}}</a>
+                    <a onClick={this.getAllComponentPerPage(number)} class="page-link" href="#">{number}</a>
                   </li>
                 )}
                 </span>
