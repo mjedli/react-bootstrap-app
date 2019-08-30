@@ -103,18 +103,18 @@ class Table extends Component {
         <tbody>
 
           {this.myComponent.map((comp) =>
-              <tr>
-              <th scope="row">{comp.id}</th>
-              <td>{comp.title}</td>
-              <td>{comp.adresse}</td>
-              <td>{comp.type}</td>
-              {(comp.id === this.state.currentId) ? (
-                  <td><input type="checkbox"  checked onChange={(e) => {this.onSelectRow(comp.id, e)}} /></td>
-               ) :(
-                <td><input type="checkbox"  onChange={(e) => {this.onSelectRow(comp.id, e)}}  /></td>
-               )}
-              </tr>
-            )}
+            <tr>
+            <th scope="row">{comp.id}</th>
+            <td>{comp.title}</td>
+            <td>{comp.adresse}</td>
+            <td>{comp.type}</td>
+            {(comp.id === this.state.currentId) ? (
+                <td><input type="checkbox"  checked onChange={(e) => {this.onSelectRow(comp.id, e)}} /></td>
+              ) :(
+              <td><input type="checkbox"  onChange={(e) => {this.onSelectRow(comp.id, e)}}  /></td>
+              )}
+            </tr>
+          )}
 
         </tbody>
       </table>
