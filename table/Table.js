@@ -5,6 +5,12 @@ import AppService from '../AppService';
 
 class Table extends Component {
 
+  numberPages = 1;
+  numberElement = 4;
+  listOfPage = [];
+  currentPage= 1;
+  maxPage = 1;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +23,35 @@ class Table extends Component {
 
     this.state.currentId = this.state.appService.getCurrentId();
 
+    let allComponent = [];
+    let start = 1;
+    allComponent = this.state.appService.getAll();
+
+    this.myComponent = [];
+
+    for (var t = (start-1)*this.numberElement; t < start*this.numberElement; t++) {
+      if (allComponent[t] != null)
+      this.myComponent.push(allComponent[t]);
+    }
+
+    let count = 0;
+    for (var t = 0; t < allComponent.length; t++) {
+        count = count +1;
+        if (count === this.numberElement) {
+          this.numberPages = this.numberPages+1;
+          count = 0;
+        }
+    }
+
+    if (count !== 0) {
+      this.numberPages = this.numberPages+1;
+    }
+
+    for (var i = 1; i <= this.numberPages-1; i++) {
+        this.listOfPage.push(i);
+        this.maxPage = i;
+    }
+
   }
 
   onSelectRow(id, event) {
@@ -25,6 +60,32 @@ class Table extends Component {
     } else {
       this.state.appService.setCurrentId(0);
     }
+  }
+
+  getAllComponentPerPage(start) {
+    
+    let allComponent = [];
+    allComponent = this.state.appService.getAll();
+
+    this.myComponent = [];
+
+    for (var t = (start-1)*this.numberElement; t < start*this.numberElement; t++) {
+      if(allComponent[t] != null)
+      this.myComponent.push(allComponent[t]);
+    }
+    this.currentPage = start;
+  }
+
+  getAllComponentPrevPage() {
+    if(this.currentPage > 1) {
+      this.getAllComponentPerPage(this.currentPage-1);
+    } 
+  }
+
+  getAllComponentNextPage() {
+    if(this.currentPage < this.maxPage) {
+      this.getAllComponentPerPage(this.currentPage+1);
+    } 
   }
 
   render() {
@@ -58,8 +119,40 @@ class Table extends Component {
 
         </tbody>
       </table>
+
+      <div align="center" class="tab-app">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-right">
+            <li class="page-item">
+              <a onClick={this.getAllComponentPrevPage()} class="page-link" href="#" aria-label="Previous">
+                <span  aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+
+            {this.listOfPage.map((number) =>
+                <span>
+                {(number === this.currentPage) ? (
+                  <li class="page-item active">
+                    <a onClick={this.getAllComponentPerPage(number)} class="page-link" href="#">{number}</a>
+                  </li>
+                ) :(
+                  <li class="page-item">
+                    <a onClick={getAllComponentPerPage(number)} class="page-link" href="#">{{number}}</a>
+                  </li>
+                )}
+                </span>
+            )}
+
+            <li class="page-item">
+              <a onClick={this.getAllComponentNextPage()} class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
+      </div>
     );
   }
 }
