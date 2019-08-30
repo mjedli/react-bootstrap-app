@@ -53,7 +53,7 @@ class Table extends Component {
 
   }
 
-  onSelectRow(id, event) {
+  onSelectRow = (id, event) => {
     if(event.target.checked === true) {
       this.state.appService.setCurrentId(id);
     } else {
