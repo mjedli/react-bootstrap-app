@@ -5,6 +5,8 @@ import AppService from '../AppService';
 
 class Table extends Component {
 
+  myComponent = [];
+
   numberPages = 1;
   numberElement = 4;
   listOfPage = [];
@@ -15,11 +17,8 @@ class Table extends Component {
     super(props);
     this.state = {
       appService : AppService,
-      list : [],
       currentId : 0
     };
-
-    this.state.list = this.state.appService.getAll();
 
     this.state.currentId = this.state.appService.getCurrentId();
 
@@ -103,7 +102,7 @@ class Table extends Component {
         </thead>
         <tbody>
 
-          {this.state.list.map((comp) =>
+          {this.myComponent.map((comp) =>
               <tr>
               <th scope="row">{comp.id}</th>
               <td>{comp.title}</td>
