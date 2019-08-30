@@ -63,7 +63,6 @@ class Table extends Component {
 
   getAllComponentPerPage = (start) => {
     
-    console.log(" uuuu " + this.start + " uu " + start);
     let allComponent = [];
     allComponent = this.state.appService.getAll();
 
