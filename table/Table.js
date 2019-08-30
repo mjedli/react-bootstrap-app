@@ -125,7 +125,7 @@ class Table extends Component {
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-right">
             <li class="page-item">
-              <a onClick={this.getAllComponentPrevPage()} class="page-link" href="#" aria-label="Previous">
+              <a onClick={() => this.getAllComponentPrevPage()} class="page-link" href="#" aria-label="Previous">
                 <span  aria-hidden="true">&laquo;</span>
               </a>
             </li>
@@ -134,18 +134,18 @@ class Table extends Component {
                 <span>
                 {(number === this.currentPage) ? (
                   <li class="page-item active">
-                    <a onClick={this.getAllComponentPerPage(number)} class="page-link" href="#">{number}</a>
+                    <a onClick={() => this.getAllComponentPerPage(number)} class="page-link" href="#">{number}</a>
                   </li>
                 ) :(
                   <li class="page-item">
-                    <a onClick={this.getAllComponentPerPage(number)} class="page-link" href="#">{number}</a>
+                    <a onClick={() => this.getAllComponentPerPage(number)} class="page-link" href="#">{number}</a>
                   </li>
                 )}
                 </span>
             )}
 
             <li class="page-item">
-              <a onClick={this.getAllComponentNextPage()} class="page-link" href="#" aria-label="Next">
+              <a onClick={() => this.getAllComponentNextPage()} class="page-link" href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
