@@ -14,6 +14,16 @@ class AppService {
     ];
     this.currentId = 0;
     this.alertMessage = "";
+    this.searchValue = "";
+
+  }
+
+  getSearchValue() {
+    return this.searchValue;
+  }
+
+  setSearchValue(value) {
+    this.searchValue = value;
   }
 
   setAlertMessage(msg) {
@@ -50,7 +60,16 @@ class AppService {
   }
 
   getAll() {
-    return this.data;
+    let list = [];
+    if(this.searchValue === "") {
+      return this.data;
+    } else {
+      list = this.data.filter(
+        e => ( (e.title.match(this.searchValue)) || (e.adresse.match(this.searchValue)))  
+      );
+      this.searchValue="";
+      return list;
+    }
   }
 
   /*
