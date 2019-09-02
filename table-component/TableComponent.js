@@ -13,7 +13,7 @@ class TableComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
+       refresh : ""
     };
   }
 
@@ -43,7 +43,7 @@ class TableComponent extends Component {
           </div>
         </div>
 
-          <Route exact path="/" component={Table}/>
+          <Route exact path="/" component={Table} refresh={this.state.refresh}/>
           <Route path="/add" component={AddComponent}/>
           <Route path="/modify" component={ModifyComponent}/>
           <Route path="/remove" component={RemoveComponent}/>

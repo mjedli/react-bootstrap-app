@@ -17,7 +17,8 @@ class Table extends Component {
     super(props);
     this.state = {
       appService : AppService,
-      currentId : 0
+      currentId : 0,
+      refresh : ""
     };
 
     this.state.currentId = this.state.appService.getCurrentId();
@@ -62,7 +63,7 @@ class Table extends Component {
   }
 
   getAllComponentPerPage = (start) => {
-    
+
     let allComponent = [];
     allComponent = this.state.appService.getAll();
 
@@ -86,6 +87,15 @@ class Table extends Component {
     if(this.currentPage < this.maxPage) {
       this.getAllComponentPerPage(this.currentPage+1);
     } 
+  }
+
+  componentWillReceiveProps(props) {
+    /*
+    const { refresh, id } = this.props;
+    if (props.refresh !== refresh) {
+        console.log("tg");
+        this.getAllComponentPerPage(1);
+    }*/
   }
 
   render() {

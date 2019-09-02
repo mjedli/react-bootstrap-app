@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Redirect } from 'react-router-dom'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route , withRouter} from 'react-router-dom';
 import AppService from '../AppService';
 import './toolbar.css';
 
@@ -10,7 +8,8 @@ class Toolbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      appService : AppService
+      appService : AppService,
+      refresh:true
     };
   }
 
@@ -18,13 +17,16 @@ class Toolbar extends Component {
   searchValue = "";
 
 
-  search() {
+  search = () => {
+    this.state.refresh = true;
     this.state.appService.setSearchValue(this.searchValue);
+    this.props.history.replace(`/`);
   }
 
   searchValueChangeEvent(event) {
     this.searchValue = event.target.value;
   }
+
 
 
   render() {
@@ -42,4 +44,4 @@ class Toolbar extends Component {
   }
 }
 
-export default Toolbar;
+export default withRouter(Toolbar);
