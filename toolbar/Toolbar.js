@@ -27,8 +27,6 @@ class Toolbar extends Component {
     this.searchValue = event.target.value;
   }
 
-
-
   render() {
     return (
       

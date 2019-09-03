@@ -89,14 +89,6 @@ class Table extends Component {
     } 
   }
 
-  componentWillReceiveProps(props) {
-    /*
-    const { refresh, id } = this.props;
-    if (props.refresh !== refresh) {
-        console.log("tg");
-        this.getAllComponentPerPage(1);
-    }*/
-  }
 
   render() {
     return (
