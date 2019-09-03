@@ -13,7 +13,7 @@ class RemoveComponent extends Component {
       messageAlert : "You should select a component !"
     };
 
-    if(this.state.appService.getCurrentId() !== 0) {
+    if (this.state.appService.getCurrentId() !== 0) {
       this.state.currentComponent = this.state.appService.get(this.state.appService.getCurrentId());
     } else {
       this.state.appService.setAlertMessage(this.state.messageAlert);
