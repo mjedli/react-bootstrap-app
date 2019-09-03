@@ -20,9 +20,7 @@ class TableComponent extends Component {
   title = "Component";
 
   componentDidUpdate(prevProps) {
-    if (this.props.refresh !== prevProps.refresh) {
-      //this.setState({ refresh: this.props.refresh });
-    }
+
   }
 
   render() {
