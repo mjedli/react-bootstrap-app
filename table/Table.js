@@ -65,6 +65,7 @@ class Table extends Component {
   }
 
   updateComponent(){
+    
     this.numberPages = 1;
     this.numberElement = 4;
     this.listOfPage = [];
