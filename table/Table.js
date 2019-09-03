@@ -21,35 +21,7 @@ class Table extends Component {
     };
 
     this.state.currentId = this.state.appService.getCurrentId();
-
-    let allComponent = [];
-    let start = 1;
-    allComponent = this.state.appService.getAll();
-
-    this.myComponent = [];
-
-    for (var t = (start-1)*this.numberElement; t < start*this.numberElement; t++) {
-      if (allComponent[t] != null)
-      this.myComponent.push(allComponent[t]);
-    }
-
-    let count = 0;
-    for (var t = 0; t < allComponent.length; t++) {
-        count = count +1;
-        if (count === this.numberElement) {
-          this.numberPages = this.numberPages+1;
-          count = 0;
-        }
-    }
-
-    if (count !== 0) {
-      this.numberPages = this.numberPages+1;
-    }
-
-    for (var i = 1; i <= this.numberPages-1; i++) {
-        this.listOfPage.push(i);
-        this.maxPage = i;
-    }
+    this.updateComponent();
 
   }
 
@@ -89,7 +61,10 @@ class Table extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    this.updateComponent();
+  }
 
+  updateComponent(){
     this.numberPages = 1;
     this.numberElement = 4;
     this.listOfPage = [];
