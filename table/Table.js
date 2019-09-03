@@ -35,6 +35,7 @@ class Table extends Component {
   getAllComponentPerPage = (start) => {
 
     let allComponent = [];
+    console.log( this.state.appService.getSearchValue());
     allComponent = this.state.appService.getAll();
 
     this.myComponent = [];
