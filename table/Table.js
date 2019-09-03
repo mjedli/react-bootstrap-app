@@ -17,8 +17,7 @@ class Table extends Component {
     super(props);
     this.state = {
       appService : AppService,
-      currentId : 0,
-      refresh : ""
+      currentId : 0
     };
 
     this.state.currentId = this.state.appService.getCurrentId();
@@ -89,6 +88,9 @@ class Table extends Component {
     } 
   }
 
+  componentDidUpdate(prevProps) {
+    this.getAllComponentPerPage(1);
+  }
 
   render() {
     return (

@@ -6,6 +6,7 @@ import './toolbar.css';
 class Toolbar extends Component {
 
   constructor(props) {
+    
     super(props);
     this.state = {
       appService : AppService,
@@ -21,6 +22,7 @@ class Toolbar extends Component {
     this.state.refresh = true;
     this.state.appService.setSearchValue(this.searchValue);
     this.props.history.replace(`/`);
+    this.props.handleStateChange(this.searchValue);
   }
 
   searchValueChangeEvent(event) {

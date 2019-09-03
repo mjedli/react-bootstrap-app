@@ -13,16 +13,22 @@ class App extends Component {
 
   constructor() {
     super();
+    this.handleStateChange = this.handleStateChange.bind(this);
     this.state = {
-      name: 'React'
+      name: 'React',
+      searchValue: ""
     };
+  }
+
+  handleStateChange(value){
+    this.setState({ searchValue: value });
   }
 
   render() {
     return (
       <div>
       <Router>
-        <Toolbar title={this.state.name}/>
+        <Toolbar title={this.state.name} handleStateChange = {this.handleStateChange}/>
         <div align="center">
           <Hello name={this.state.name} />
           <p>
@@ -31,7 +37,7 @@ class App extends Component {
           <br/><br/>
         </div>
         <div align="center">
-          <TableComponent refresh/>
+          <TableComponent refresh={this.state.searchValue}/>
         </div>
         <Footer/>
       </Router>
