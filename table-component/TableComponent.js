@@ -6,6 +6,7 @@ import AddComponent from '../add/AddComponent'
 import ModifyComponent from '../modify/ModifyComponent'
 import RemoveComponent from '../remove/RemoveComponent'
 import AlertComponent from '../alert/AlertComponent'
+import AppService from '../AppService';
 import './table-component.css';
 
 class TableComponent extends Component {
@@ -13,11 +14,17 @@ class TableComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-       refresh : ""
+      appService : AppService,
+       refresh : false
     };
   }
 
   title = "Component";
+
+  update = () => {
+    this.state.appService.setSearchValue("");
+    this.state.refresh = true;
+  }
 
   render() {
     return (
@@ -30,7 +37,7 @@ class TableComponent extends Component {
         <div align="center" class ="col col-sm col-md col-lg col-xl">
           <ul class="nav nav-tabs">
             <li class="nav-item">
-              <Link class="nav-link active" to="/">{this.title}
+              <Link class="nav-link active" onClick={() => this.update()} to="/">{this.title}
               <i class="material-icons">autorenew</i></Link>
             </li>
           </ul>
@@ -43,7 +50,7 @@ class TableComponent extends Component {
           </div>
         </div>
 
-          <Route exact path="/" component={() => <Table />} />
+          <Route exact path="/" component={() => <Table refresh={this.state.refresh}/>} />
           <Route path="/add" component={AddComponent}/>
           <Route path="/modify" component={ModifyComponent}/>
           <Route path="/remove" component={RemoveComponent}/>

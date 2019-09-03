@@ -59,6 +59,14 @@ class Table extends Component {
     } 
   }
 
+  componentDidUpdate(prevProps) {
+    console.log(this.props.refresh);
+  // Typical usage (don't forget to compare props):
+    if (this.props.refresh) {
+      this.updateComponent();
+    }
+  }
+
   updateComponent  = () => {
 
     this.myComponent = [];
