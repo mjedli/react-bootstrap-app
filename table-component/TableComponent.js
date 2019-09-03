@@ -19,10 +19,6 @@ class TableComponent extends Component {
 
   title = "Component";
 
-  componentDidUpdate(prevProps) {
-
-  }
-
   render() {
     return (
     
