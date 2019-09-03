@@ -59,15 +59,8 @@ class Table extends Component {
     } 
   }
 
-  componentDidUpdate(prevProps) {
-    console.log("ffff");
-    
-    if (this.props.refresh !== prevProps.refresh) {
-      this.setState({ refresh: this.props.refresh });
-    }
-  }
 
-  updateComponent  = () =>{
+  updateComponent  = () => {
 
     this.myComponent = [];
 
@@ -79,8 +72,10 @@ class Table extends Component {
 
     let allComponent = [];
     let start = 1;
-     console.log( this.state.appService.getSearchValue());
+
+    console.log( this.state.appService.getSearchValue());
     allComponent = this.state.appService.getAll();
+    console.log("uu"+allComponent);
 
     this.myComponent = [];
 

@@ -21,7 +21,7 @@ class TableComponent extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.refresh !== prevProps.refresh) {
-      this.setState({ refresh: this.props.refresh });
+      //this.setState({ refresh: this.props.refresh });
     }
   }
 
