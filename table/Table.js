@@ -17,7 +17,8 @@ class Table extends Component {
     super(props);
     this.state = {
       appService : AppService,
-      currentId : 0
+      currentId : 0,
+      searchvalue : ""
     };
 
     this.state.currentId = this.state.appService.getCurrentId();
@@ -60,12 +61,10 @@ class Table extends Component {
     } 
   }
 
-  componentDidUpdate(prevProps) {
-    this.updateComponent();
-  }
+  updateComponent  = () =>{
 
-  updateComponent(){
-    
+    this.myComponent = [];
+
     this.numberPages = 1;
     this.numberElement = 4;
     this.listOfPage = [];
@@ -74,6 +73,7 @@ class Table extends Component {
 
     let allComponent = [];
     let start = 1;
+     console.log( this.state.appService.getSearchValue());
     allComponent = this.state.appService.getAll();
 
     this.myComponent = [];

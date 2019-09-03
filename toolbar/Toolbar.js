@@ -9,8 +9,7 @@ class Toolbar extends Component {
     
     super(props);
     this.state = {
-      appService : AppService,
-      refresh:true
+      appService : AppService
     };
   }
 
@@ -19,9 +18,7 @@ class Toolbar extends Component {
 
 
   search = () => {
-    this.state.refresh = true;
     this.state.appService.setSearchValue(this.searchValue);
-    this.props.history.replace(`/`);
     this.props.handleStateChange(this.searchValue);
   }
 

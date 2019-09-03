@@ -49,7 +49,7 @@ class TableComponent extends Component {
           </div>
         </div>
 
-          <Route exact path="/" component={Table} refresh={this.state.refresh}/>
+          <Route exact path="/" component={() => <Table refresh={this.state.refresh} />} />
           <Route path="/add" component={AddComponent}/>
           <Route path="/modify" component={ModifyComponent}/>
           <Route path="/remove" component={RemoveComponent}/>
