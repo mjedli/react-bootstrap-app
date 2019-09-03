@@ -61,6 +61,15 @@ class Table extends Component {
     } 
   }
 
+  componentDidUpdate(prevProps) {
+    console.log("ffff");
+    
+    if (this.props.refresh !== prevProps.refresh) {
+       
+      this.setState({ refresh: this.props.refresh });
+    }
+  }
+
   updateComponent  = () =>{
 
     this.myComponent = [];
