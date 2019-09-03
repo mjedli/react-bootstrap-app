@@ -20,10 +20,8 @@ class Table extends Component {
       currentId : 0,
       searchvalue : ""
     };
-
     this.state.currentId = this.state.appService.getCurrentId();
     this.updateComponent();
-
   }
 
   onSelectRow = (id, event) => {
