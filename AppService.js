@@ -62,13 +62,11 @@ class AppService {
   getAll() {
     let list = [];
     if(this.searchValue === "") {
-      console.log("1 "+this.searchValue);
       return this.data;
     } else {
       list = this.data.filter(
         e => ( (e.title.match(this.searchValue)) || (e.adresse.match(this.searchValue)))  
       );
-      console.log("2 "+this.searchValue+"-"+list);
       this.searchValue="";
       return list;
     }
