@@ -41,7 +41,10 @@ class AppService {
   setCurrentId(id) {
     this.currentId = id; 
   }
-
+  
+  /*
+  * addComponent
+  */
   addComponent(item){
     let currentId = 1;
 
