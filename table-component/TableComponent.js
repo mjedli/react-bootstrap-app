@@ -15,7 +15,7 @@ class TableComponent extends Component {
     super(props);
     this.state = {
       appService : AppService,
-       refresh : false
+      refresh : false
     };
   }
 
