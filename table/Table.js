@@ -63,7 +63,6 @@ class Table extends Component {
   }
 
   getAllComponentPerPageTri = (byTitle, byAdresse) => {
-    console.log("rrrrr");
     let allComponent
     allComponent = this.state.appService.getAll();
 
@@ -74,13 +73,14 @@ class Table extends Component {
     if(byAdresse) {
       this.sortListByAdresse(allComponent);
     }
-    
+
     this.myComponent = [];
 
     for (var t = (this.currentPage-1)*this.numberElement; t < this.currentPage*this.numberElement; t++) {
       if(allComponent[t] != null)
       this.myComponent.push(allComponent[t]);
     }
+    this.forceUpdate();
   }
 
   sortListByTitle = (myListComponent) => {

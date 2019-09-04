@@ -24,6 +24,7 @@ class TableComponent extends Component {
   update = () => {
     this.state.appService.setSearchValue("");
     this.state.refresh = true;
+    this.forceUpdate();
   }
 
   render() {
