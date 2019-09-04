@@ -18,30 +18,6 @@ class AppService {
 
   }
 
-  getSearchValue() {
-    return this.searchValue;
-  }
-
-  setSearchValue(value) {
-    this.searchValue = value;
-  }
-
-  setAlertMessage(msg) {
-    this.alertMessage = msg;
-  }
-
-  getAlertMessage() {
-    return this.alertMessage;
-  }
-
-  getCurrentId() {
-    return this.currentId;
-  }
-
-  setCurrentId(id) {
-    this.currentId = id; 
-  }
-  
   /*
   * addComponent
   */
@@ -104,6 +80,30 @@ class AppService {
         this.data.splice(index, 1);
     }
     this.currentId = 0; 
+  }
+
+  getSearchValue() {
+    return this.searchValue;
+  }
+
+  setSearchValue(value) {
+    this.searchValue = value;
+  }
+
+  setAlertMessage(msg) {
+    this.alertMessage = msg;
+  }
+
+  getAlertMessage() {
+    return this.alertMessage;
+  }
+
+  getCurrentId() {
+    return this.currentId;
+  }
+
+  setCurrentId(id) {
+    this.currentId = id; 
   }
 
 }
