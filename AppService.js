@@ -55,10 +55,16 @@ class AppService {
     this.data.push(item);
   }
 
+  /*
+  * get
+  */
   get(id){
     return this.data.find(d => d.id === id);
   }
 
+  /*
+  * getALL
+  */
   getAll() {
     let list = [];
     if(this.searchValue === "") {
