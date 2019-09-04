@@ -13,6 +13,9 @@ class Table extends Component {
   currentPage= 1;
   maxPage = 1;
 
+  setTitleTri = true;
+  setTitleAdresse = true;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -57,6 +60,47 @@ class Table extends Component {
     if(this.currentPage < this.maxPage) {
       this.getAllComponentPerPage(this.currentPage+1);
     } 
+  }
+
+  getAllComponentPerPageTri = (byTitle, byAdresse) => {
+    console.log("rrrrr");
+    let allComponent
+    allComponent = this.state.appService.getAll();
+
+    if(byTitle) {
+      this.sortListByTitle(allComponent);
+    }
+    
+    if(byAdresse) {
+      this.sortListByAdresse(allComponent);
+    }
+    
+    this.myComponent = [];
+
+    for (var t = (this.currentPage-1)*this.numberElement; t < this.currentPage*this.numberElement; t++) {
+      if(allComponent[t] != null)
+      this.myComponent.push(allComponent[t]);
+    }
+  }
+
+  sortListByTitle = (myListComponent) => {
+    if(this.setTitleTri) {
+      myListComponent.sort((a, b) => (a.title > b.title) ? 1 : -1);
+      this.setTitleTri = false;
+    } else {
+      myListComponent.sort((a, b) => (a.title < b.title) ? 1 : -1);
+      this.setTitleTri = true;
+    }
+  }
+
+  sortListByAdresse = (myListComponent)  => {
+    if(this.setTitleAdresse) {
+      myListComponent.sort((a, b) => (a.adresse > b.adresse) ? 1 : -1);
+      this.setTitleAdresse = false;
+    } else {
+      myListComponent.sort((a, b) => (a.adresse < b.adresse) ? 1 : -1);
+      this.setTitleAdresse = true;
+    }
   }
 
   updateComponent  = () => {
@@ -108,8 +152,8 @@ class Table extends Component {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col"><a >Title<i class="material-icons">swap_vert</i></a></th>
-            <th scope="col"><a >Address<i class="material-icons">swap_vert</i></a></th>
+            <th scope="col"><a onClick={() => this.getAllComponentPerPageTri(true,false)}>Title<i class="material-icons">swap_vert</i></a></th>
+            <th scope="col"><a onClick={() => this.getAllComponentPerPageTri(false,true)}>Address<i class="material-icons">swap_vert</i></a></th>
             <th scope="col" colSpan="2">Type</th>
           </tr>
         </thead>
