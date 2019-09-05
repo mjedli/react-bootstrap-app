@@ -72,7 +72,7 @@ class ModifyComponent extends Component {
         <div align="right">
           <button type="button" onClick={this.cancel } class="btn btn-info">Cancel</button>
           &nbsp;
-          <button type="button" class="btn btn-primary" onClick={this.modify }>Add</button>
+          <button type="button" class="btn btn-primary" onClick={this.modify }>Modify</button>
         </div>
       </form>
       </div>
