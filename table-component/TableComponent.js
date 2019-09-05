@@ -13,6 +13,7 @@ class TableComponent extends Component {
 
   constructor(props) {
     super(props);
+    this.update = this.update.bind(this);
     this.state = {
       appService : AppService,
       refresh : false
@@ -51,7 +52,8 @@ class TableComponent extends Component {
           </div>
         </div>
 
-          <Route exact path="/" component={() => <Table refresh={this.state.refresh}/>} />
+          <Route exact path="/" 
+          component={() => <Table update={this.update} refresh={this.state.refresh}/>} />
           <Route path="/add" component={AddComponent}/>
           <Route path="/modify" component={ModifyComponent}/>
           <Route path="/remove" component={RemoveComponent}/>

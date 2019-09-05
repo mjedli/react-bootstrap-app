@@ -18,6 +18,7 @@ class Table extends Component {
 
   constructor(props) {
     super(props);
+    this.onSelectRow = this.onSelectRow.bind(this);
     this.state = {
       appService : AppService,
       currentId : 0,
@@ -33,7 +34,7 @@ class Table extends Component {
     } else {
       this.state.appService.setCurrentId(0);
     }
-
+    this.props.update();
   }
 
   getAllComponentPerPage = (start) => {
