@@ -33,6 +33,7 @@ class Table extends Component {
     } else {
       this.state.appService.setCurrentId(0);
     }
+
   }
 
   getAllComponentPerPage = (start) => {
