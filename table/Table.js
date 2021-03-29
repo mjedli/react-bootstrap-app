@@ -51,7 +51,7 @@ class Table extends Component {
 
     this.currentPage = start;
     // refresh
-    this.setState();
+    this.forceUpdate();
   }
 
   getAllComponentPrevPage = () => {
