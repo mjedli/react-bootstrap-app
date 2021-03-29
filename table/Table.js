@@ -48,8 +48,10 @@ class Table extends Component {
       if(allComponent[t] != null)
       this.myComponent.push(allComponent[t]);
     }
-    
+
     this.currentPage = start;
+    // refresh
+    this.setState();
   }
 
   getAllComponentPrevPage = () => {
